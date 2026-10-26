@@ -1,0 +1,39 @@
+Math Proof Board — Prism Launcher 用ビルドパッケージ
+====================================================
+
+大事なこと:
+このZIPそのものをPrismの通常画面へドラッグしても、MODは入りません。
+これはMODのソース一式です。Windowsで一度ビルドすると、Prismへドラッグできる
+mathproof-1.0.0.jar が dist フォルダに作られます。
+
+必要なもの
+----------
+- Minecraft Java Edition 1.21.1
+- NeoForge 21.1.262（1.21.1用）
+- JDK 21
+- 初回ビルド時のインターネット接続（Gradle / NeoForgeの依存関係取得）
+
+手順
+----
+1. このZIPをフォルダに展開します。
+2. JDK 21をインストールし、PowerShellで `java -version` が 21 と表示されることを確認します。
+3. `build.bat` をダブルクリックします。
+4. 成功すると `dist\mathproof-1.0.0.jar` が作成され、フォルダが開きます。
+5. Prism Launcherで、Minecraft 1.21.1 / NeoForge 21.1.262 のインスタンスを選びます。
+6. 右クリック → 編集 → Mods タブを開き、`mathproof-1.0.0.jar` をその一覧へドラッグします。
+7. ゲームを起動して M キーを押すと、数学証明黒板を開けます。
+
+任意: コマンドで直接インストール
+----------------------------------
+build.ps1 に Prism インスタンスのフォルダを渡すと、成功後にMODを自動コピーできます。
+
+  powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -PrismInstancePath "C:\path\to\Prism\instances\インスタンス名"
+
+ここで指定するのはインスタンスフォルダです。通常、その中に `.minecraft` フォルダがあります。
+
+注意
+----
+この作業環境は外部依存ファイルをダウンロードできないため、配布前のNeoForge統合ビルドや
+実ゲーム起動を検証できていません。ビルド用スクリプトとソースを含めていますが、JAR生成後も
+起動できるかは実際のPrism環境で確認が必要です。ビルドログにエラーが出た場合は、最後の
+エラー部分を共有してください。

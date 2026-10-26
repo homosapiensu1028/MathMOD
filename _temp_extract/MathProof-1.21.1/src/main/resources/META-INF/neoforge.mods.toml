@@ -1,0 +1,21 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+[[mods]]
+modId="mathproof"
+version="${file.jarVersion}"
+displayName="Math Proof Board"
+authors="MathProof"
+description='''A geometric proof workbench with draggable proof nodes, theorem matching, and strict completion checks.'''
+[[dependencies.mathproof]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.0,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.mathproof]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.22)"
+ordering="NONE"
+side="BOTH"
